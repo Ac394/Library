@@ -1,0 +1,197 @@
+:root {
+  --grey-dark: #1F2933;
+  --grey-light: #52606D;
+  --grey-bright: #CBD2D9;
+  --red-vivid: #CF1124;
+  --red-desut: #F86A6A;
+  --blue-light: #127FBF;
+  --off-white: #F5F7FA;
+}
+
+* {
+margin: 0;
+padding: 0;
+}
+
+html {
+  height: 100%;
+  width: 100%;
+  background-color: var(--off-white);
+}
+
+
+.library {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 60px;
+}
+
+.book-card {  
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 171px;
+  background-repeat: no-repeat;
+  background-size: 171px 256px;
+}
+
+.container:hover .cover{
+/*   border: 3px var(--blue-light) solid; */
+  scale: 1.02;
+  box-shadow: -3px 3px 5px 0px rgba(0,0,0,0.1);
+}
+
+.cover {
+  width: 171px;
+  height: 256px;
+  margin-bottom: 4px;
+  border-radius: 8px;
+/*   border: 3px solid rgba(0,0,0,0); */
+}
+
+.book-card p {
+  font-size: 1rem;
+  font-family: Roboto, sans-serif;
+  color: var(--grey-light);
+  text-align: center;
+  height: auto;
+  padding: 4px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.book-card .title {  
+  font-weight: bold;
+  color: var(--grey-dark);
+}
+
+.pages span {
+  font-size: 1.2rem;
+  padding-left: 4px;
+  vertical-align: bottom;
+}
+
+.book-card .deleteBtn {
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  padding: 2px;
+  color: var(--red-desut);
+  background: none;
+/*   background: rgba(31,41,51,.4); */
+  border: none;
+/*   border-radius: 4px; */
+  cursor: pointer;
+  display: none;
+}
+
+.deleteBtn:hover {
+  color: var(--red-vivid);
+}
+
+.container:hover .deleteBtn {
+  display: block;
+}
+
+.container {
+  cursor: pointer;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  background-color: var(---grey-bright);
+  min-height: 100%;
+  width: 100vw;
+  top: 0px;
+  background-color: rgba(0,0,0, 0.05)
+}
+
+form {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+/*   align-items: center; */
+  top: 15vh;
+  padding: 30px;
+  left: calc(50vw - 222px);
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: -6px 6px 5px 0px rgba(0,0,0,0.1);
+}
+
+.openModal button {
+  background: none;
+  width: 171px;
+  height: 256px;
+  color: var(--grey-bright);
+  border: 3px var(--grey-bright) solid;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.openModal button:hover {
+  color: var(--grey-light);
+}
+
+.openModal span {
+  font-size: 2.5rem;
+}
+
+form input {
+  font-family: Roboto, sans-serif;
+  font-size: 1rem;
+  height: 30px;
+  width: 400px;
+  border-radius: 5px;
+  border: 2px solid #CBD2D9;
+  margin-bottom: 20px;
+  margin-top: 6px;
+}
+
+form label {
+  font-family: Roboto, sans-serif;
+  font-size: 1.2rem;
+}
+
+form input[type=submit] {
+  font-family: Roboto, sans-serif;
+  font-size: 1.1rem;
+  background-color: #0085FF;
+  color: var(--off-white);
+  border-radius: 5px;
+  border: none;
+  height: 40px;
+  margin: 0px;
+  cursor: pointer;
+}
+
+form input[type=submit]:hover {
+  background-color: #369af7;
+}
+
+form input[type=submit]:active {
+  background-color: #0085FF;
+}
+
+form input::placeholder {
+  padding-left: 5px;
+}
+
+form input[type=checkbox] {
+  margin: 0px;
+  width: 35px;
+}
+
+.checkbox {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+}
